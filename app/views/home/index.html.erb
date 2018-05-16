@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<div class ="container">
+  <div style="text-align: left; padding: 25px; font-weight: 700;"> 
+    <div class="row">
+        <% @items.each do |message| %>
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 less-lr-padding">
+            <div class="product-details">
+              <div style="position: relative;">
+                <a href="<%= message["Name_url"]%>">
+                  <div><%= image_tag(message["Image"] , class: 'product-thumb') %>
+                  </div>
+                  <div class="product-name"><%= message["Name"] %> 
+                  </div>
+                  <p class="product-price"><%= message["Price"] %>
+                  </p>
+                </a> 
+              </div> 
+            </div>
+          </div>  
+        <% end %>
+      </div>
+    </div>
+</div>
+
